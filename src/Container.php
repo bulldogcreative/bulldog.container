@@ -10,9 +10,7 @@ class Container implements ContainerInterface
 
     public function get($id)
     {
-        if(!is_string($id)) {
-            throw new \Bulldog\Container\ContainerException('ID MUST be a string.');
-        }
+        $this->validateId($id);
 
         if($this->has($id)) {
             return $this->container[$id];
@@ -23,9 +21,7 @@ class Container implements ContainerInterface
 
     public function has($id)
     {
-        if(!is_string($id)) {
-            throw new \Bulldog\Container\ContainerException('ID MUST be a string.');
-        }
+        $this->validateId($id);
 
         if(isset($this->container[$id])) {
             return true;
@@ -36,10 +32,15 @@ class Container implements ContainerInterface
 
     public function set($id, $value)
     {
+        $this->validateId($id);
+
+        return $this->container[$id] = $value;
+    }
+
+    private function validateId($id)
+    {
         if(!is_string($id)) {
             throw new \Bulldog\Container\ContainerException('ID MUST be a string.');
         }
-
-        return $this->container[$id] = $value;
     }
 }

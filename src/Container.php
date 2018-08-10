@@ -17,4 +17,9 @@ class Container implements ContainerInterface
     {
      //
     }
+
+    public function set($id, $value)
+    {
+        return $this->container[$id] = $value;
+    }
 }

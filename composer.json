@@ -9,5 +9,7 @@
             "email": "ldurfee@bulldogcreative.com"
         }
     ],
-    "require": {}
+    "require": {
+        "psr/container": "^1.0"
+    }
 }

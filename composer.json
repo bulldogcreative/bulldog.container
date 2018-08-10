@@ -9,6 +9,11 @@
             "email": "ldurfee@bulldogcreative.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Bulldog\\": "src/"
+        }
+    },
     "require": {
         "psr/container": "^1.0"
     }

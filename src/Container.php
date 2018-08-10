@@ -32,7 +32,7 @@ class Container implements ContainerInterface
     {
         $this->validateId($id);
 
-        if($this->has($id)) {
+        if ($this->has($id)) {
             return $this->container[$id];
         }
 
@@ -55,7 +55,7 @@ class Container implements ContainerInterface
     {
         $this->validateId($id);
 
-        if(isset($this->container[$id])) {
+        if (isset($this->container[$id])) {
             return true;
         }
 
@@ -92,7 +92,7 @@ class Container implements ContainerInterface
      */
     private function validateId($id)
     {
-        if(!is_string($id)) {
+        if (!is_string($id)) {
             throw new ContainerException('ID MUST be a string.');
         }
     }

@@ -11,7 +11,7 @@ class Container implements ContainerInterface
     public function get($id)
     {
         if(!is_string($id)) {
-            throw new \Bulldog\Container\ContainerException();
+            throw new \Bulldog\Container\ContainerException('ID MUST be a string.');
         }
 
         if($this->has($id)) {
@@ -24,7 +24,7 @@ class Container implements ContainerInterface
     public function has($id)
     {
         if(!is_string($id)) {
-            throw new \Bulldog\Container\ContainerException();
+            throw new \Bulldog\Container\ContainerException('ID MUST be a string.');
         }
 
         if(isset($this->container[$id])) {
@@ -37,9 +37,9 @@ class Container implements ContainerInterface
     public function set($id, $value)
     {
         if(!is_string($id)) {
-            throw new \Bulldog\Container\ContainerException();
+            throw new \Bulldog\Container\ContainerException('ID MUST be a string.');
         }
-        
+
         return $this->container[$id] = $value;
     }
 }

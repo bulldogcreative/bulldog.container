@@ -26,4 +26,31 @@ class ExceptionTests extends TestCase
     {
         $result = $this->container->get('not-in-there');
     }
+
+    /**
+     * @expectedException Bulldog\Container\ContainerException
+     * @expectedExceptionMessage ID MUST be a string.
+     */
+    public function testSetNotStringException()
+    {
+        $this->container->set(new class{}, 'value');
+    }
+
+    /**
+     * @expectedException Bulldog\Container\ContainerException
+     * @expectedExceptionMessage ID MUST be a string.
+     */
+    public function testGetNotStringException()
+    {
+        $this->container->get(new class{}, 'value');
+    }
+
+    /**
+     * @expectedException Bulldog\Container\ContainerException
+     * @expectedExceptionMessage ID MUST be a string.
+     */
+    public function testHasNotStringException()
+    {
+        $this->container->has(new class{}, 'value');
+    }
 }

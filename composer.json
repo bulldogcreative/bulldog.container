@@ -9,5 +9,15 @@
             "email": "ldurfee@bulldogcreative.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Bulldog\\": "src/"
+        }
+    },
+    "require": {
+        "psr/container": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.3"
+    }
 }

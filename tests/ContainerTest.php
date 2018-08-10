@@ -35,4 +35,12 @@ class ContainerTest extends TestCase
     {
         $result = $this->container->get('not-in-there');
     }
+
+    public function testGoodGetCall()
+    {
+        $value = 'test';
+        $this->container->set('test', $value);
+        $result = $this->container->get('test');
+        $this->assertSame($result, $value);
+    }
 }

@@ -10,6 +10,10 @@ class Container implements ContainerInterface
 
     public function get($id)
     {
+        if(!is_string($id)) {
+            throw new \Bulldog\Container\ContainerException();
+        }
+
         if($this->has($id)) {
             return $this->container[$id];
         }
@@ -19,6 +23,10 @@ class Container implements ContainerInterface
 
     public function has($id)
     {
+        if(!is_string($id)) {
+            throw new \Bulldog\Container\ContainerException();
+        }
+
         if(isset($this->container[$id])) {
             return true;
         }
@@ -28,6 +36,10 @@ class Container implements ContainerInterface
 
     public function set($id, $value)
     {
+        if(!is_string($id)) {
+            throw new \Bulldog\Container\ContainerException();
+        }
+        
         return $this->container[$id] = $value;
     }
 }

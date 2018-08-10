@@ -8,11 +8,11 @@ class ExceptionTests extends TestCase
 
     public function setUp()
     {
-        $this->container = new Bulldog\Container\Container;
+        $this->container = new Bulldog\Container;
     }
 
     /**
-     * @expectedException Bulldog\Container\NotFoundException
+     * @expectedException Bulldog\NotFoundException
      */
     public function testBulldogGettingNotFoundException()
     {
@@ -28,7 +28,7 @@ class ExceptionTests extends TestCase
     }
 
     /**
-     * @expectedException Bulldog\Container\ContainerException
+     * @expectedException Bulldog\ContainerException
      * @expectedExceptionMessage ID MUST be a string.
      */
     public function testSetNotStringException()
@@ -38,7 +38,7 @@ class ExceptionTests extends TestCase
     }
 
     /**
-     * @expectedException Bulldog\Container\ContainerException
+     * @expectedException Bulldog\ContainerException
      * @expectedExceptionMessage ID MUST be a string.
      */
     public function testGetNotStringException()
@@ -48,7 +48,7 @@ class ExceptionTests extends TestCase
     }
 
     /**
-     * @expectedException Bulldog\Container\ContainerException
+     * @expectedException Bulldog\ContainerException
      * @expectedExceptionMessage ID MUST be a string.
      */
     public function testHasNotStringException()

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bulldog\Container;
+namespace Bulldog;
 
 use Psr\Container\NotFoundExceptionInterface;
 

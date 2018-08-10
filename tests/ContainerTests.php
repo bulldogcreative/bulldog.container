@@ -9,7 +9,7 @@ class ContainerTests extends TestCase
 
     public function setUp()
     {
-        $this->container = new Bulldog\Container\Container;
+        $this->container = new Bulldog\Container;
         $this->createBigValue();
     }
 

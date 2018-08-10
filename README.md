@@ -1,5 +1,7 @@
 # Bulldog Container
 
+[![Build Status](https://travis-ci.org/bulldogcreative/bulldog.container.svg?branch=master)](https://travis-ci.org/bulldogcreative/bulldog.container)
+
 Aka, the dog house. This container implements [PSR-11][2].
 
 ## Installation

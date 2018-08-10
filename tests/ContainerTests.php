@@ -53,12 +53,13 @@ class ContainerTests extends TestCase
             "array" => ['hi'],
             "associative" => ['greeting' => 'hi'],
             "associative_num" => ['greeting' => 1],
-            "obj" => new class{},
+            "obj" => new class {
+            },
             "str" => "string",
             "big" => $this->bigValue,
         ];
 
-        foreach($data as $id => $value) {
+        foreach ($data as $id => $value) {
             $set = $this->container->set($id, $value);
             $this->assertSame($set, $value);
 

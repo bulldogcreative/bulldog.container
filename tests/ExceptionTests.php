@@ -33,7 +33,8 @@ class ExceptionTests extends TestCase
      */
     public function testSetNotStringException()
     {
-        $this->container->set(new class{}, 'value');
+        $this->container->set(new class {
+        }, 'value');
     }
 
     /**
@@ -42,7 +43,8 @@ class ExceptionTests extends TestCase
      */
     public function testGetNotStringException()
     {
-        $this->container->get(new class{}, 'value');
+        $this->container->get(new class {
+        }, 'value');
     }
 
     /**
@@ -51,6 +53,7 @@ class ExceptionTests extends TestCase
      */
     public function testHasNotStringException()
     {
-        $this->container->has(new class{}, 'value');
+        $this->container->has(new class {
+        }, 'value');
     }
 }

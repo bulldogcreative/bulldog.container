@@ -14,7 +14,7 @@ class ExceptionTests extends TestCase
     /**
      * @expectedException Bulldog\Container\NotFoundException
      */
-    public function testGetException()
+    public function testBulldogGettingNotFoundException()
     {
         $result = $this->container->get('not-in-there');
     }
@@ -22,7 +22,7 @@ class ExceptionTests extends TestCase
     /**
      * @expectedException Psr\Container\NotFoundExceptionInterface
      */
-    public function testGetExceptionInterface()
+    public function testPsrGettingNotFoundException()
     {
         $result = $this->container->get('not-in-there');
     }

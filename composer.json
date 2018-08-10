@@ -1,0 +1,13 @@
+{
+    "name": "bulldog/container",
+    "description": "PSR-11 Container.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levi Durfee",
+            "email": "ldurfee@bulldogcreative.com"
+        }
+    ],
+    "require": {}
+}

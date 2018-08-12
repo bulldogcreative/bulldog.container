@@ -27,7 +27,9 @@ $container['service'] = function() {
 
 $service = $container['service'];
 $service->test();
+// it works!
 
 $container['service'] = new Example;
 $service = $container['service'];
 $service->test();
+// it works!

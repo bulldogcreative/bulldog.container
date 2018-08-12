@@ -38,7 +38,7 @@ class ArrayAccessTests extends TestCase
         $toTest = [
             1 => [
                 'key' => 'one',
-                'value' => function() {
+                'value' => function () {
                     new stdClass();
                 },
                 'type' => 'null',
@@ -60,11 +60,10 @@ class ArrayAccessTests extends TestCase
             ],
         ];
         
-        foreach($toTest as $test) {
+        foreach ($toTest as $test) {
             $this->container[$test['key']] = $test['value'];
             $value = $this->container[$test['key']];
             $this->assertInternalType($test['type'], $value);
         }
     }
-    
 }

@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/bulldogcreative/bulldog.container.svg?branch=master)](https://travis-ci.org/bulldogcreative/bulldog.container)
 [![Coverage Status](https://coveralls.io/repos/github/bulldogcreative/bulldog.container/badge.svg?branch=master)](https://coveralls.io/github/bulldogcreative/bulldog.container?branch=master)
 
-Aka, the dog house. This container implements [PSR-11][2].
+Aka, the dog house. This container implements [PSR-11][2] and [ArrayAccess][5].
 
 ## Installation
 
@@ -15,6 +15,8 @@ composer require bulldog/container
 
 You **should** check to see if the container `has` an entry for that ID before
 you try to `get` that entry.
+
+### Key / Value
 
 ```php
 <?php
@@ -33,6 +35,39 @@ var_dump($result);
 $value = $container->get('id');
 echo $value;
 // value
+```
+
+### Key / Closure
+
+If the value associated with the key is [callable][4], then the container will 
+call it for you, returning the contents of the closure. This allows you to 
+lazy load classes or services. 
+
+```php
+<?php
+class Example
+{
+    public function test()
+    {
+        echo 'it works!';
+    }
+    
+}
+
+// Using a closure
+$container['service'] = function() {
+    return new Example;
+};
+
+$service = $container['service'];
+$service->test();
+// it works!
+
+// Storing an object (not lazy loaded)
+$container['service'] = new Example;
+$service = $container['service'];
+$service->test();
+// it works!
 ```
 
 ### Available Methods
@@ -66,3 +101,5 @@ php-cs-fixer fix ./tests
 [1]: https://www.php-fig.org/psr/psr-11/meta/#4-recommended-usage-container-psr-and-the-service-locator
 [2]: https://www.php-fig.org/psr/psr-11/
 [3]: https://www.bulldogcreative.com
+[4]: https://secure.php.net/is_callable
+[5]: https://secure.php.net/array_access

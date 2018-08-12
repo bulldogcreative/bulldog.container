@@ -48,6 +48,10 @@ lazy load classes or services.
 
 ```php
 <?php
+include 'vendor/autoload.php';
+
+$container = new Bulldog\Container;
+
 class Example
 {
     public function test()
@@ -71,6 +75,52 @@ $container['service'] = new Example;
 $service = $container['service'];
 $service->test();
 // it works!
+```
+
+### Dependency Injection Container
+
+```php
+<?php
+
+include 'vendor/autoload.php';
+
+$container = new Bulldog\Container;
+
+class Required 
+{
+    private $test = "Hello";
+    
+    public function getTest()
+    {
+        return $this->test;
+    }
+}
+
+class Example
+{
+    private $required;
+    
+    public function __construct(Required $required)
+    {
+        $this->required = $required;
+    }
+    
+    public function run()
+    {
+        echo $this->required->getTest();
+    }
+    
+}
+$container['required'] = function() {
+    return new Required;
+};
+
+$container['example'] = function($c) {
+    return new Example($c['required']);
+};
+
+$e = $container['example'];
+$e->run();
 ```
 
 ### Available Methods

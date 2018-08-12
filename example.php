@@ -11,3 +11,23 @@ $result = $container->has('id');
 
 var_dump($result);
 // bool(true)
+
+class Example
+{
+    public function test()
+    {
+        echo 'it works!';
+    }
+    
+}
+
+$container['service'] = function() {
+    return new Example;
+};
+
+$service = $container['service'];
+$service->test();
+
+$container['service'] = new Example;
+$service = $container['service'];
+$service->test();

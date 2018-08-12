@@ -1,7 +1,10 @@
 # Bulldog Container
 
-[![Build Status](https://travis-ci.org/bulldogcreative/bulldog.container.svg?branch=master)](https://travis-ci.org/bulldogcreative/bulldog.container)
-[![Coverage Status](https://coveralls.io/repos/github/bulldogcreative/bulldog.container/badge.svg?branch=master)](https://coveralls.io/github/bulldogcreative/bulldog.container?branch=master)
+[![Travis (.org) branch](https://img.shields.io/travis/bulldogcreative/bulldog.container/master.svg?style=flat-square)](https://travis-ci.org/bulldogcreative/bulldog.container)
+[![Coveralls github](https://img.shields.io/coveralls/github/bulldogcreative/bulldog.container.svg?style=flat-square)](https://coveralls.io/github/bulldogcreative/bulldog.container)
+[![Packagist](https://img.shields.io/packagist/v/bulldog/container.svg?style=flat-square)](https://packagist.org/packages/bulldog/container)
+[![Packagist](https://img.shields.io/packagist/dt/bulldog/container.svg?style=flat-square)](https://packagist.org/packages/bulldog/container)
+
 
 Aka, the dog house. This container implements [PSR-11][2] and [ArrayAccess][5].
 

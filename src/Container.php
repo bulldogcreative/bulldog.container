@@ -8,7 +8,7 @@ use Psr\Container\ContainerInterface;
  * Class Container
  * @package Bulldog\Container
  */
-class Container implements ContainerInterface
+class Container implements ContainerInterface, \ArrayAccess
 {
     /**
      * @var array
@@ -80,6 +80,26 @@ class Container implements ContainerInterface
         $this->validateId($id);
 
         return $this->container[$id] = $value;
+    }
+    
+    public function offsetExists ( $offset )
+    {
+        
+    }
+    
+    public function offsetGet ( $offset )
+    {
+        
+    }
+    
+    public function offsetSet ( $offset , $value )
+    {
+        
+    }
+    
+    public function offsetUnset ( $offset )
+    {
+        
     }
 
     /**

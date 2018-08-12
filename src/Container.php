@@ -34,7 +34,7 @@ class Container implements ContainerInterface, \ArrayAccess
 
         if ($this->has($id)) {
             if (is_callable($this->container[$id])) {
-                return $this->container[$id]();
+                return $this->container[$id]($this);
             }
             
             return $this->container[$id];

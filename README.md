@@ -133,7 +133,9 @@ $e->run();
 
 *All parameters are required.*
 
-Users **SHOULD NOT** pass a container into an object so that the object can retrieve its own dependencies. Please refer to the [Meta Document][1] provided by
+Users **SHOULD NOT** pass a container into an object so that the object can 
+retrieve its own dependencies. Please refer to the [Meta Document][1] provided 
+by [PHP-FIG][6].
 
 ## Contributing
 
@@ -156,3 +158,4 @@ php-cs-fixer fix ./tests
 [3]: https://www.bulldogcreative.com
 [4]: https://secure.php.net/is_callable
 [5]: https://secure.php.net/array_access
+[6]: https://www.php-fig.org/

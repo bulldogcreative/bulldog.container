@@ -38,9 +38,26 @@ class ArrayAccessTests extends TestCase
         $toTest = [
             1 => [
                 'key' => 'one',
-                'value' => function() {},
+                'value' => function() {
+                    new stdClass();
+                },
                 'type' => 'null',
-            ]
+            ],
+            2 => [
+                'key' => 'two',
+                'value' => 'test',
+                'type' => 'string',
+            ],
+            3 => [
+                'key' => 'three',
+                'value' => 1,
+                'type' => 'int',
+            ],
+            4 => [
+                'key' => 'four',
+                'value' => [],
+                'type' => 'array',
+            ],
         ];
         
         foreach($toTest as $test) {

@@ -86,21 +86,50 @@ class Container implements ContainerInterface, \ArrayAccess
         return $this->container[$id] = $value;
     }
     
+    /**
+     * Check to see if an offset exists.
+     *
+     * Essentially returns isset on a key in the private property `$container`.
+     *
+     * @param string $offset
+     */
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
     
+    /**
+     * Get an Offset.
+     *
+     * Essentially the same as accessing an offset of an array.
+     *
+     * @param mixed $offset
+     */
     public function offsetGet($offset)
     {
         return $this->get($offset);
     }
     
+    /**
+     * Set an Offset.
+     *
+     * Essentially the same as setting a key/value of an array.
+     *
+     * @param string $offset
+     * @param mixed $value
+     */
     public function offsetSet($offset, $value)
     {
         $this->set($offset, $value);
     }
     
+    /**
+     * Unset an Offset.
+     *
+     * Essentially unsetting a key/value of an array.
+     *
+     * @param string $offset
+     */
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);

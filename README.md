@@ -5,9 +5,9 @@
 [![Packagist](https://img.shields.io/packagist/v/bulldog/container.svg?style=flat-square)](https://packagist.org/packages/bulldog/container)
 [![Packagist](https://img.shields.io/packagist/dt/bulldog/container.svg?style=flat-square)](https://packagist.org/packages/bulldog/container)
 
+[API Documentation](https://bulldogcreative.github.io/bulldog.container).
 
 Aka, the dog house. This container implements [PSR-11][2] and [ArrayAccess][5].
-[API Documentation](https://bulldogcreative.github.io/bulldog.container).
 
 ## Installation
 

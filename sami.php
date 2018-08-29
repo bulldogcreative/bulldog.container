@@ -9,4 +9,7 @@ $iterator = Finder::create()
     ->in('./src')
 ;
 
-return new Sami($iterator);
+return new Sami($iterator, [
+    'build_dir'            => './docs',
+    'cache_dir'            => './.cache',
+]);

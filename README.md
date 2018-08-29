@@ -7,6 +7,7 @@
 
 
 Aka, the dog house. This container implements [PSR-11][2] and [ArrayAccess][5].
+[API Documentation](https://bulldogcreative.github.io/bulldog.container).
 
 ## Installation
 
@@ -42,9 +43,9 @@ echo $value;
 
 ### Key / Closure
 
-If the value associated with the key is [callable][4], then the container will 
-call it for you, returning the contents of the closure. This allows you to 
-lazy load classes or services. 
+If the value associated with the key is [callable][4], then the container will
+call it for you, returning the contents of the closure. This allows you to
+lazy load classes or services.
 
 ```php
 <?php
@@ -58,7 +59,7 @@ class Example
     {
         echo 'it works!';
     }
-    
+
 }
 
 // Using a closure
@@ -86,10 +87,10 @@ include 'vendor/autoload.php';
 
 $container = new Bulldog\Container;
 
-class Required 
+class Required
 {
     private $test = "Hello";
-    
+
     public function getTest()
     {
         return $this->test;
@@ -99,17 +100,17 @@ class Required
 class Example
 {
     private $required;
-    
+
     public function __construct(Required $required)
     {
         $this->required = $required;
     }
-    
+
     public function run()
     {
         echo $this->required->getTest();
     }
-    
+
 }
 $container['required'] = function() {
     return new Required;
@@ -133,8 +134,8 @@ $e->run();
 
 *All parameters are required.*
 
-Users **SHOULD NOT** pass a container into an object so that the object can 
-retrieve its own dependencies. Please refer to the [Meta Document][1] provided 
+Users **SHOULD NOT** pass a container into an object so that the object can
+retrieve its own dependencies. Please refer to the [Meta Document][1] provided
 by [PHP-FIG][6].
 
 ## Contributing

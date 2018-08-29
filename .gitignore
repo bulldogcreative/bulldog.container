@@ -1,5 +1,6 @@
 /vendor/
 composer.lock
 .idea
+.cache
 .php_cs.cache
 sami.phar
